@@ -10,7 +10,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:StartFinance.ViewModels"
-   
+     Loaded="Page_Loaded" 
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="PersonalListView">
@@ -27,9 +27,12 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
+    
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
+    
+    
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.Content>
@@ -62,7 +65,7 @@
                 <TextBox x:Name="Mobile" Header="Mobile" PlaceholderText="0415984433" TextWrapping="Wrap"/>
                 
             </StackPanel>
-            <StackPanel x:Name="listViewPanel" Grid.Row="1">
+            <StackPanel x:Name="listViewPanel" Margin="0,0,0,0" Height="403">
                 <ListView x:Name="PersonalInfoList"  ItemTemplate="{StaticResource PersonalListView}"
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <RelativePanel.Below>PageStart</RelativePanel.Below>

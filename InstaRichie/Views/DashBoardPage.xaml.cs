@@ -76,5 +76,10 @@ namespace StartFinance.Views
             Assetme.ItemsSource = query1.ToList();
         }
 
+        private void btnPersonalInfo_Click(object sender, RoutedEventArgs e)
+        {
+
+           Frame.Navigate(typeof(Views.PersonalInfo));
+        }
     }
 }
