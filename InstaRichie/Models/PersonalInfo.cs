@@ -8,25 +8,25 @@ namespace StartFinance.Models
 {
     class PersonalInfo
     {
-        [PrimaryKey, AutoIncrement]
-        public string PersonalID { get; set; }
+        [PrimaryKey]
+        public int PersonalID { get; set; }
 
-       
+        [Unique]
         public string FirstName { get; set; }
 
-     
+
         public string LastName { get; set; }
 
-      
+
         public string DOB { get; set; }
 
-  
+        [NotNull]
         public string Gender { get; set; }
 
- 
+        [NotNull, Unique]
         public string Email { get; set; }
 
-  
+        [NotNull]
         public string phoneNumber { get; set; }
     }
 }
