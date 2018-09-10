@@ -27,12 +27,12 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    
+
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
-    
-    
+
+
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.Content>
@@ -56,14 +56,17 @@
 
             <TextBlock x:Name="PageTitle" Text="Your Personal Information" Margin="9,-7,0,0" Style="{StaticResource BodyTextBlockStyle}" Height="39"/>
             <StackPanel>
-                <TextBox x:Name="PersonalID" Header="Personal ID" PlaceholderText="ab10122" TextWrapping="Wrap"/>
+                <TextBox x:Name="PersonalID" Header="Personal ID" PlaceholderText="10122" TextWrapping="Wrap"/>
                 <TextBox x:Name="FirstName" Header="First Name" PlaceholderText="John" TextWrapping="Wrap"/>
                 <TextBox x:Name="LastName" Header="Last Name" PlaceholderText="Snow" TextWrapping="Wrap"/>
-                <TextBox x:Name="DOB" Header="Date Of Birth" PlaceholderText="03/04/2018" TextWrapping="Wrap"/>
-                <TextBox x:Name="Gender" Header="Gender" PlaceholderText="Male" TextWrapping="Wrap"/>
+                <TextBlock Text="Date of Birth:" />
+                <CalendarDatePicker x:Name="birthDay" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PlaceholderText="Select a date" DateChanged="dateChanged"/>
+                <TextBlock Text="Gender:" />
+                <RadioButton x:Name="rdoMale" Content="Male" Checked="rdoMale_Checked" HorizontalAlignment="Left" Margin="0,0,216,0" Width="120" />
+                <RadioButton x:Name="rdoFemale" Content="Female"  Checked="rdoFemale_Checked" HorizontalAlignment="Left" Margin="0,0,216,0"  Width="120" />
                 <TextBox x:Name="Email" Header="Emaile" PlaceholderText="john@snow.com" TextWrapping="Wrap"/>
                 <TextBox x:Name="Mobile" Header="Mobile" PlaceholderText="0415984433" TextWrapping="Wrap"/>
-                
+
             </StackPanel>
             <StackPanel x:Name="listViewPanel" Margin="0,0,0,0" Height="403">
                 <ListView x:Name="PersonalInfoList"  ItemTemplate="{StaticResource PersonalListView}"
