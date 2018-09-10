@@ -198,7 +198,7 @@
                                     </Grid>
                                 </PivotItem>
                             </Pivot>
-                            <Button x:Name="btnPersonalInfo" Content="Personal Information" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="380" BorderBrush="#FFE5F009" Foreground="#FF7007DA" Background="{ThemeResource AppBarBackgroundThemeBrush}" Margin="0,305,0,-157" Click="btnPersonalInfo_Click"/>
+                           
                         </Grid>
                     </Grid>
                 </ScrollViewer>
