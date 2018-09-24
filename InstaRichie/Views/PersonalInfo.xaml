@@ -69,8 +69,7 @@
 
             </StackPanel>
             <StackPanel x:Name="listViewPanel" Margin="0,0,0,0" Height="403">
-                <ListView x:Name="PersonalInfoList"  ItemTemplate="{StaticResource PersonalListView}"
-                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView x:Name="PersonalInfoList"  ItemTemplate="{StaticResource PersonalListView}" VerticalAlignment="Stretch">
                     <RelativePanel.Below>PageStart</RelativePanel.Below>
                 </ListView>
             </StackPanel>

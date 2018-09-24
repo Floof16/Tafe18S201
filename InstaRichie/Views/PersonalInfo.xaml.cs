@@ -27,9 +27,10 @@ namespace StartFinance.Views
     /// </summary>
     public sealed partial class PersonalInfo : Page
     {
+     
 
         SQLiteConnection conn; // adding an SQLite connection
-        string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Findata.sqlite");
+        string path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "PersonalInfoData.sqlite");
         string Gender;
         string DOB;
         public void NewPage()
@@ -127,11 +128,11 @@ namespace StartFinance.Views
                 }
 
 
-                else
+                
                 {   // Inserts the data
                     conn.Insert(new Models.PersonalInfo()
                     {
-                        PersonalID = int.Parse(PersonalID.Text),
+                        PersonalID = PersonalID.Text,
                         FirstName = FirstName.Text.ToString(),
                         LastName = LastName.Text.ToString(),
                         DOB = DOB,
@@ -189,7 +190,7 @@ namespace StartFinance.Views
 
                 try
                 {
-                    int ID = ((Models.PersonalInfo)PersonalInfoList.SelectedItem).PersonalID;
+                    string ID = ((Models.PersonalInfo)PersonalInfoList.SelectedItem).PersonalID;
                     var querydel = conn.Query<Models.PersonalInfo>("DELETE FROM PersonalInfo WHERE PersonalID='" + ID + "'");
                     Results();
                 }
@@ -261,8 +262,8 @@ namespace StartFinance.Views
 
                         try
                         {
-                            int ID = ((Models.PersonalInfo)PersonalInfoList.SelectedItem).PersonalID;
-                            var queryEdit = conn.Query<Models.PersonalInfo>("UPDATE PersonalInfo SET FirstName='" + FirstName.Text.ToString() + "', LastName = '" + LastName.Text.ToString() +
+                            string ID = ((Models.PersonalInfo)PersonalInfoList.SelectedItem).PersonalID;
+                            var queryEdit = conn.Query<Models.PersonalInfo>("UPDATE PersonalInfo SET  FirstName='" + FirstName.Text.ToString() + "', LastName = '" + LastName.Text.ToString() +
                                                               "', DOB ='" + DOB + "', Gender='" + Gender + "', Email ='" + Email.Text.ToString() + "', phoneNumber ='" + Mobile.Text.ToString() +
                                                                 "'WHERE PersonalID ='" + ID + "'");
                             Results();

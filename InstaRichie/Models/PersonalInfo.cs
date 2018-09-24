@@ -9,21 +9,21 @@ namespace StartFinance.Models
     class PersonalInfo
     {
         [PrimaryKey]
-        public int PersonalID { get; set; }
+        public string PersonalID { get; set; }
 
-        [Unique]
+        [NotNull]
         public string FirstName { get; set; }
 
-
+        [NotNull]
         public string LastName { get; set; }
 
-
+        [NotNull]
         public string DOB { get; set; }
 
         [NotNull]
         public string Gender { get; set; }
 
-        [NotNull, Unique]
+        [NotNull]
         public string Email { get; set; }
 
         [NotNull]
