@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="StartFinance.Views.ContactsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StartFinance.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <DataTemplate x:Key="PersonalListView">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding ContactID}" Padding="0,0,15,0"/>
+                    <TextBlock Text="{Binding FirstName}" Padding="0,0,15,0"/>
+                    <TextBlock Text="{Binding LastName}" Padding="0,0,15,0"/>
+                    <TextBlock Text="{Binding CompanyName}" Padding="0,0,15,0"/>
+                    <TextBlock Text="{Binding MobilePhone}" Padding="0,0,15,0"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <!--<Page.DataContext>
+        <vm:MainPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>-->
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Save" Label="Save Flight" Click="save_click"/>
+            <AppBarButton Icon="Delete" Label="Delete Account" Click="DeleteItem_Click" />
+            <AppBarButton Icon="Edit" Label="Edit Account" Click="EditItem_Click" />
+            <AppBarButton Icon="Cancel" Label="Cancel" Click="cancel_click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+
+            <TextBlock x:Name="PageTitle" Text="Your Personal Information" Margin="9,-7,0,0" Style="{StaticResource BodyTextBlockStyle}" Height="39"/>
+            <StackPanel>
+                <TextBox x:Name="ContactID"  Header="Contact ID" PlaceholderText="6548" TextWrapping="Wrap"/>
+                <TextBox x:Name="FirstName"  Header="First Name" PlaceholderText="John" TextWrapping="Wrap"/>
+                <TextBox x:Name="LastName"  Header="Last Name" PlaceholderText="Doe" TextWrapping="Wrap"/>
+                <TextBox x:Name="CompanyName"  Header="Company Name" PlaceholderText="Test Company" TextWrapping="Wrap"/>
+                <TextBox x:Name="Mobile"  Header="Mobile" PlaceholderText="0415984433" TextWrapping="Wrap"/>
+
+            </StackPanel>
+            <StackPanel x:Name="listViewPanel" Margin="0,0,0,0" Height="403">
+                <ListView x:Name="ContactsList" ItemClick="itemClickedEvent" ItemTemplate="{StaticResource PersonalListView}"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <RelativePanel.Below>PageStart</RelativePanel.Below>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+
+</Page>
