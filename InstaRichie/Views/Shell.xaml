@@ -25,7 +25,7 @@
                                Text="DashBoard" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-            
+
             <!--  Transaction List button  -->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:TransactionListPage" 
                                           AutomationProperties.Name="Jerry"
@@ -97,6 +97,33 @@
                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
                                Text="WishList" />
                 </StackPanel>
+
+            </Controls:HamburgerButtonInfo>
+
+            <!--  Contact List button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ContactsPage" 
+                                          AutomationProperties.Name="Brian"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="Contact" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Contacts" />
+                </StackPanel>
+
+            </Controls:HamburgerButtonInfo>
+
+
+            <!--Personal Info Button-->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:PersonalInfo" 
+                                          AutomationProperties.Name="Allan"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="ContactInfo" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Personal Info" />
+                </StackPanel>
             </Controls:HamburgerButtonInfo>
             <!--Appointment Info Button-->
             <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentInfoPage" 
@@ -112,6 +139,7 @@
             </Controls:HamburgerButtonInfo>
         </Controls:HamburgerMenu.PrimaryButtons>
 
+
         <Controls:HamburgerMenu.SecondaryButtons>
             <!--  settingspage button  -->
             <Controls:HamburgerButtonInfo x:Name="SettingsButton" PageParameter="0"
@@ -124,11 +152,12 @@
                                 Symbol="Setting" />
                     <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
                                Text="Settings" />
+
                 </StackPanel>
+
             </Controls:HamburgerButtonInfo>
         </Controls:HamburgerMenu.SecondaryButtons>
 
     </Controls:HamburgerMenu>
 
 </Page>
-
