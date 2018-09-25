@@ -215,7 +215,7 @@ namespace StartFinance.Views
                         FirstName = FirstName.Text,
                         LastName = LastName.Text,
                         CompanyName = CompanyName.Text,
-                        MobilePhone = int.Parse(Mobile.Text)
+                        MobilePhone = Mobile.Text
                     });
 
                 }
