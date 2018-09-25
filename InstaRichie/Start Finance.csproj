@@ -22,7 +22,7 @@
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>94C7CB755A529328835235D2BCA59E90C8A2E7DD</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A0AC9C609AE82941278E974BAFB58A73AC98BB21</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -103,6 +103,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Accounts.cs" />
+    <Compile Include="Models\AppointmentInfo.cs" />
     <Compile Include="Models\Assets.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Contacts.cs" />
@@ -118,6 +119,9 @@
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="Views\AccountsPage.xaml.cs">
       <DependentUpon>AccountsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AppointmentInfoPage.xaml.cs">
+      <DependentUpon>AppointmentInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AssetsPage.xaml.cs">
       <DependentUpon>AssetsPage.xaml</DependentUpon>
@@ -191,6 +195,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\AccountsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AppointmentInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
